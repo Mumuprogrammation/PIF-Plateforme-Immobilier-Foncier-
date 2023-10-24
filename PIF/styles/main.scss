@@ -1,0 +1,290 @@
+    $main-color: #48fc01;
+    $black: #13131a;
+    $bg: #ffffff;
+    $border: .1rem solid rgba(30, 255, 0, 0.959);
+    $border-radius: 10px;
+
+
+*{
+   padding: 0;
+   margin: 0;
+   font-family: sans-serif;
+   text-decoration: none;
+   transition: .2s linear;
+   outline: none;
+   border: none;
+   box-sizing: border-box;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   /* overflow-y: hidden; */
+   scroll-padding-top: 9rem;
+   scroll-behavior: smooth;
+
+   ::-webkit-scrollbar{
+    width: .8rem;
+ }
+
+ ::-webkit-scrollbar-track{
+    background: transparent;
+ }
+
+ ::-webkit-scrollbar-thumb{
+    background: #fff;
+ }
+}
+
+body{
+   background: $bg;
+}
+
+.header{
+
+    background: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: $border;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    
+        input{
+            width: 80%;
+            height: 100%;
+            font-size: 1.5em;
+            padding-left: 5%;          
+        }
+    }
+
+    .logo{
+        position: relative;
+        right: 3%;
+    }
+   .logo img{
+    height: 6rem;
+    width: 10rem;
+ }
+
+ .navbar{
+    position: relative;
+    left: 0;
+}
+
+ .navbar a{
+    margin: 0 2rem;
+    font-size: 1.6rem;
+    color: $black;
+    font-weight: bold;
+ }
+
+ .navbar a:hover{
+    color: $main-color;
+    border-bottom: .1rem solid $main-color;
+    padding-bottom: .5rem;
+ }
+
+ .navbar a:focus, a:nth-child(3){
+    color: $main-color;
+    border-bottom: .1rem solid $main-color;
+    padding-bottom: .5rem;
+ }
+
+.sign{
+    width: 18vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 6%;
+    justify-content: space-between;
+}
+
+span > a{
+    padding-top: 7%;
+}
+
+.button {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 2.5rem; 
+    width: 8vw;
+    height: 6vh;
+    background-color: $black;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease-in;
+
+    svg {
+        height: 40px;
+        left: 0;
+        top: 0; 
+        position: absolute;
+        width: 100%; 
+    }
+
+    rect {      
+        fill: none;
+        stroke: #fff;
+        stroke-width: 5;
+        stroke-dasharray: 450, 0;
+        transition: all 0.5s linear;
+    }
+
+    :hover rect {
+        stroke-width: 5;
+        stroke-dasharray: 20, 300;
+        stroke-dashoffset: 48;
+        stroke: $main-color;
+        transition: all 2s cubic-bezier(0.22, 1, 0.25, 1);
+    }
+    
+}
+.button:hover {
+    color: $main-color;
+}
+.filter{
+    height: 5vh;
+    width: 100%;
+    top: 14%;
+    border: $border;
+    font-size: 1.8rem;
+    text-align: center;
+    align-items: center;
+    padding-top: 0.5%;
+    background-color: $main-color;
+    position: fixed;
+
+    span{
+     padding-left: 3%;
+
+     a:focus{
+        color:  #fff;
+        border-top: .3rem solid #fff;
+        padding-top: .5rem;
+        
+    }
+    }
+
+    :first-child{
+        padding-left: 0;
+    }
+
+    a{
+        color: #fff;
+    }
+}
+/*************************************************Main*****************************************/
+.main{
+    display: flex;
+    flex-direction: row;
+    height: 120vh;
+    margin-top: 12%;
+
+    aside{
+        height: 70%;
+        width: 15%;
+        border: $border;
+        margin-left: 4%;
+        position: fixed;
+        background-color: rgba(30, 255, 0, 0.9);
+        border-radius: $border-radius;
+    }
+
+    #container {
+        height: 250vh;
+        width: 69vw;
+        //border: $border;
+        margin-left: 4%;
+        display: grid;
+        grid-template-areas: 
+        "top top top top top top top top top top top top top top top "
+        "middle middle middle middle middle middle middle middle middle middle middle middle middle middle middle "
+        "bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom bottom"
+        "bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1 bottom1"
+        ;
+        grid-template-rows: auto, 1fr, auto;
+        grid-template-columns: 200px, 1fr;
+        row-gap: 4%;
+        column-gap: 6.4%;
+        // position: absolute;
+        margin-left: 25%;
+        //overflow: hidden;
+        transition: transform 0.5s ease;
+      }
+      
+      .slide {
+
+        width: 20vw;
+        height: 55vh;
+        flex: 0,0,100%;
+        border-radius: $border-radius;
+        align-items: flex-start;
+        justify-content: center;
+        border: $border;
+
+       .top{
+        grid-area: top;
+       }
+       .middle{
+        grid-area: middle;
+       }
+
+       .bottom{
+        grid-area: bottom;
+       }
+      }
+      
+      .controls {
+        width: 10vw;
+        display: flex;
+        justify-content: center;
+        gap: 25%;
+        align-items: center;
+        margin-top: 10px;
+        position: absolute;
+        top: 275vh;
+        left: 55%;
+      }
+      
+      .controls button {
+        width: 25px;
+        height: 25px;
+        border: none;
+        transition: box-shadow 0.3s ease-in-out;
+        font-size: 1em;
+
+      }
+      
+   button:hover{
+        box-shadow: 0, 0, 10px, 5px, rgba(30, 255, 0, 0.959);
+    }
+
+      #indicators {
+    //    bottom: 10px;
+    //    left: 50%;
+       //transform: translateX(-50%);
+       display: flex;
+      }
+      .circles{
+        width: 8px;
+        height: 8px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0, 4px;
+        cursor: pointer;
+      }
+      .circles:active{
+        background-color: #000000;
+
+      }
+
+}
