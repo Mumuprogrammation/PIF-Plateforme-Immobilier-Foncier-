@@ -1,0 +1,68 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db{
+    provider = "mongodb"
+    url = env("DATABASE_URL")
+}
+
+model utilisateur{
+    id_utilisateur  Int  @id_utilisateur  @default(autoincrement())
+    nom   String
+    email  String 
+    telephone  Int
+    mot_de_passe  String
+}
+
+model annonce{
+    id_annonce  Int  @id_annonce  @default(autoincrement())
+    description String
+    status Boolean
+    date_annoce DateTime
+    utilisateurId  Int?
+    table_utilisateur  utilisateur? @relation(fields: [utilisateurId]), references: [id_utilisateur] 
+    terrainId  Int? 
+    table_terrain terrain? @relation(fields: [terrainId]), references: [id_terrain] 
+    @default(now())
+    updateAt DateTime @updateAt
+}
+
+model terrain{
+    id_terrain  Int  @id_terrain  @default(autoincrement())
+    surface  Float
+    prix  Float
+    image Bytes
+    localisationId  Int?
+    table_localisation  localisation? @relation(fields: [localisationId]), references: [id_localisation]
+}
+
+model localisation{
+    id_localisation  Int @id_localisation @default(autoincrement())
+    longitude  Float
+    latitude  Float
+    centre  Float
+}
+
+model recevoir{
+    messageId  Int?
+    table_message  message? @relation(fields: [messageId]), references: [id_message]
+    annonceId  Int?
+    table_annonce annonce? @relation(fields: [annonceId]), references: [id_annonce]
+}
+
+model message{
+    id_message  Int? @id_message @default(autoincrement())
+    date_heure_message DateTime
+    contenu_message String
+    @default(now())
+    updateAt DateTime @updateAt
+}
+
+model categorie{
+    id_categorie  Int? @id_categorie @default(autoincrement())
+    nom_categorie  String
+    terrainId Int?
+    table_terrain terrain? @realation(fields: [terrainId]), references: [id_terrain]
+}
+
