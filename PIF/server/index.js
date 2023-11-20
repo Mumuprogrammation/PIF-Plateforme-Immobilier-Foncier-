@@ -23,3 +23,4 @@ app.listen(PORT,()=>{
 
 //confiuration des routes
 app.use('/api/user', userRoute);//route pour les utilisateurs
+app.use('api/offer', offerRoute);// routes pour les annonces

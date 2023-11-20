@@ -11,7 +11,7 @@ model User {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   name         String?
   email        String   @unique
-  phone        Int
+  phone        String
   password     String?
   favTerrainId String[]
   Offer        Offer[]
@@ -20,14 +20,14 @@ model User {
 model Offer {
   id           String    @id @default(auto()) @map("_id") @db.ObjectId
   content      String
-  status       Boolean
-  owner        User      @relation(fields: [userEmail], references: [email])
+  status       Boolean   @default(true)
+  owner        User      @relation(fields: [userEmail], references: [email],onDelete: Cascade)
   authorGround Ground    @relation(fields: [groundID], references: [id])
   userEmail    String
   groundID     String    @db.ObjectId
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
-  receive      receive[]
+  receive      Receive[]
 }
 
 model Ground {
@@ -48,7 +48,7 @@ model Location {
   Ground        Ground[]
 }
 
-model receive {
+model Receive {
   id             String  @id @default(auto()) @map("_id") @db.ObjectId
   authorMessage  Message @relation(fields: [messageID], references: [id])
   concernedOffer Offer?  @relation(fields: [offerID], references: [id])
@@ -62,7 +62,7 @@ model Message {
   updatedAt      DateTime @updatedAt
   messageContent String
 
-  receive        receive[]
+  receive        Receive[]
 }
 
 model Category {
