@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+:root{
+    --color-primary: #7380ec;
+    --color-danger:#2E72B8;
+    /* --color-danger: #ff7782; */
+    --color-succes: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.4rem;
+    --padding: 1.2rem;
+    
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* ------------- DARK THEME VARIABLES --------------- */
+.dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 140%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.content{
+    width: 21%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: var(--border-radius-3);
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+p{
+    text-align: center;
+    color: var(--color-light);
+    padding-top: 0 8px;
+}
+
+h6{
+    font-size: 20px;
+    text-align: center;
+    color: var(--color-primary-variant);
+    margin: 0;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+
+li{
+    padding-left: 5px;
+}
+
+ul li span{
+    font-size: 18px;
+    color: gold;
+}
+
+button{
+    text-align: center;
+    font-size: 18px;
+    background: var(--color-light);
+    color: var(--color-succes);
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

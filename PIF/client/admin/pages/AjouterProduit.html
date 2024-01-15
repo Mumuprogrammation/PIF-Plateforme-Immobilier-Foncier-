@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../icons/font/bootstrap-icons.css">
+    <link rel="shortup icon" href="../../images/logoPIF.png">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/AjouterProduit.css">
+    <title>AjouterProduit</title>
+</head>
+<body>
+    <div class="container">
+
+        <!-- DEBUT DU MENU DE NAVIGATION -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="../../images/logoPIF.png" alt="">
+                    <h2>P<span class="danger">I</span>F</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="bi-x-lg"></span>
+                </div>
+            </div>
+            
+            <div class="slidebar">
+                <a href="dashboard.html">
+                    <span class="bi-grid-fill"></span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="UserList.html">
+                    <span class="bi-person-fill"></span>
+                    <h3>Utilisateurs</h3>
+                </a>
+                <a href="ProductList.html">
+                    <span class="bi-calendar-event-fill"></span>
+                    <h3>Produits</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-journals"></span>
+                    <h3>Analyses</h3>
+                </a>
+                <a href="AjouterProduit.html" class="active">
+                    <span class="bi-plus-lg"></span>
+                    <h3>Ajouter un produit</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-x-lg"></span>
+                    <h3>Supprimer produit</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-arrow-bar-up"></span>
+                    <h3>Mise a jour</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-chat-right-text"></span>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span class="bi-arrow-return-right"></span>
+                    <h3>Quitter</h3>
+                </a>
+            </div> 
+        </aside>
+        <!-- FIN DU MENU DE NAVIGATION -->
+
+        <!-- DEBUT DU MAIN -->
+        <main>
+            <h1>Ajouter un nouveau Terrain</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <h1 class="land">Entrer les informations du terrain</h1>
+            
+             <div class="forms">
+                <form action="" class="form-1">
+                    <span class="title first">Premiere Caracteristiques</span>
+                    <div class="land-1">
+                        <div class="input-land">
+                            <label for="">Nom du terrain</label>
+                            <input type="text" placeholder="Entrer le nom du terrain">
+                        </div>
+                        <div class="input-land">
+                            <label for="">Image</label>
+                            <input type="file">
+                        </div>
+                        <div class="input-land">
+                            <label for="">Prix</label>
+                            <input type="text" placeholder="Entrer le prix du terrain">
+                        </div>
+                        <div class="input-land">
+                            <label for="">Localisation</label>
+                            <input type="text" placeholder="Entrer la localisation du terrain">
+                        </div>
+                    </div>
+                </form>
+                <form action="" class="form-1 hide">
+                    <span class="title">Deuxiemes Caracteristiques</span>
+                    <div class="land-1">
+                        <div class="input-land">
+                            <label for="">Superficie</label>
+                            <input type="text" placeholder="Entrer la superficie du terrain">
+                        </div>
+                        <div class="input-land not">
+                            <label for="">Notation</label>
+                            <!-- <input type="text" placeholder="Entrer le nom du terrain"> -->
+                            <div class="notate">
+                                <span class="bi-star-fill star"></span>
+                                <span class="bi-star-fill star"></span>
+                                <span class="bi-star-fill star"></span>
+                                <span class="bi-star-fill star"></span>
+                                <span class="bi-star-fill star"></span>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                </form>
+                <div class="input-land">
+                    <label for="">Description</label>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Entrer une description du terrain"></textarea>
+                </div>
+                
+                <button></button>
+                
+            </div>
+        </main>
+        <!-- FIN DU MAIN -->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="bi-list"></span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="bi-sun-fill active"></span>
+                    <span class="bi-moon-fill"></span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Adrien</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="../../images/agent2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/ajouterProduit.js"></script>
+</body>
+</html>

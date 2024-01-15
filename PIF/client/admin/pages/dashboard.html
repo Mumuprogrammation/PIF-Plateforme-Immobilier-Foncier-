@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../icons/font/bootstrap-icons.css">
+    <link rel="shortup icon" href="../../images/logoPIF.png">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+
+        <!-- DEBUT DU MENU DE NAVIGATION -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="../../images/logoPIF.png" alt="">
+                    <h2>P<span class="danger">I</span>F</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="bi-x-lg"></span>
+                </div>
+            </div>
+            
+            <div class="slidebar">
+                <a href="dashboard.html" class="active">
+                    <span class="bi-grid-fill"></span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="UserList.html">
+                    <span class="bi-person-fill"></span>
+                    <h3>Utilisateurs</h3>
+                </a>
+                <a href="ProductList.html">
+                    <span class="bi-calendar-event-fill"></span>
+                    <h3>Produits</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-journals"></span>
+                    <h3>Analyses</h3>
+                </a>
+                <a href="AjouterProduit.html">
+                    <span class="bi-plus-lg"></span>
+                    <h3>Ajouter un produit</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-x-lg"></span>
+                    <h3>Supprimer produit</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-arrow-bar-up"></span>
+                    <h3>Mise a jour</h3>
+                </a>
+                <a href="#">
+                    <span class="bi-chat-right-text"></span>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span class="bi-arrow-return-right"></span>
+                    <h3>Quitter</h3>
+                </a>
+            </div> 
+        </aside>
+        <!-- FIN DU MENU DE NAVIGATION -->
+
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <span class="bi-journals"></span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>$25,024</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="circle-design">
+                                <div class="circle" style="width: 68px; height: 66px; background: #000; border-radius: 50%;"></div>
+                            </div>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                 <!--FIN DE L'AFFICHAGE DES STATS  -->
+                <div class="expenses">
+                    <span class="bi-journals"></span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>$25,024</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="circle-design">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                 <!--FIN DE L'AFFICHAGE DES utilisateurs  -->
+                <div class="income">
+                    <span class="bi-journals"></span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>$25,024</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="circle-design">
+                                <div class="circle" style="width: 68px; height: 66px; background: #000; border-radius: 50%;"></div>
+                            </div>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                 <!--FIN DE L'AFFICHAGE DES RENDEMENTS -->
+            </div>
+
+            <!-- DEBUT DE L'AFFICHAGE DES UTILISATEURS RECENTS -->
+
+            <div class="recent-orders">
+                <h2>Utilisateurs Recents</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Profile User</th>
+                            <th>Product Name</th>
+                            <th>Product Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="bi-person-fill"></span></td>
+                            <td>Foldable Mini Drone</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bi-person-fill"></span></td>
+                            <td>Foldable Mini Drone</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bi-person-fill"></span></td>
+                            <td>Foldable Mini Drone</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bi-person-fill"></span></td>
+                            <td>Foldable Mini Drone</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Voir tous</a>
+            </div>
+        </main>
+        <!-- FIN DU MAIN -->
+        <!-- DEBUT DU TOP -->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="bi-list"></span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="bi-sun-fill active"></span>
+                    <span class="bi-moon-fill"></span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Adrien</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="../../images/agent2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DU TOP -->
+
+            <div class="recent-updates">
+                <h2>Achats Recents</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="../../images/pic1.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> received his order 
+                            of Night lion tech GPS drone</p>
+                            <small class="text-muted">2 minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="../../images/pic2.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> received his order 
+                            of Night lion tech GPS drone</p>
+                            <small class="text-muted">2 minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="../../images/pic3.jpg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> received his order 
+                            of Night lion tech GPS drone</p>
+                            <small class="text-muted">2 minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DE L'AFFICHAGE DES MISES A JOUR -->
+            <div class="sales-analystics">
+                <h2>Sales Analystics</h2>
+                <div class="item online">
+                    <div class="icon">
+                        <span class="bi-cart-fill"></span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>UTILISATEURS EN LIGNE</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="success">+39%</h5>
+                        <h3>3849</h3>
+                    </div>
+                </div>
+                <div class="item offline">
+                    <div class="icon">
+                        <span class="bi-calendar-fill"></span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>UTILISATEURS HORS LIGNE</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>1100</h3>
+                    </div>
+                </div>
+                <div class="item customers">
+                    <div class="icon">
+                        <span class="bi-person-fill"></span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>NOUVEAUX UTILISATEURS</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="success">+25%</h5>
+                        <h3>849</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
