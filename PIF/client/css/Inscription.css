@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root{
+    --color-first:#4070f4;
+    --color-second:#f0f0f0;
+    --color-white:#fff;
+    --color-succes:#2ecc71;
+    --color-error:#e74c3c;
+}
+
+body{
+    background: var(--color-first);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    background: var(--color-white);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.5);
+    width: 400px;
+    max-width: 100%;
+}
+
+.header h2{
+    margin: 0;
+    text-align: center;
+    font-size: 29px;
+    /* font-style: italic; */
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid var(--color-second);
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.form-control input:focus{
+    /* transition: all 300ms ease-in-out; */
+    border-color: var(--color-first);
+}
+
+.form-control span{
+    position: absolute;
+    top: 33px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-control small{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form button{
+    background: var(--color-first);
+    border: 2px solid var(--color-first);
+    color: var(--color-white);
+    display: block;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    
+}
+
+.form button:hover{
+    transition: all 300ms ease-in-out;
+    background: transparent;
+    color: var(--color-first);
+    border-color: #4070f4;
+}
+
+.form-control.succes input{
+    border-color: var(--color-succes);
+}
+
+.form-control.error input{
+    border-color: var(--color-error);
+}
+
+.form-control.succes span.bi-check-circle-fill{
+    color: var(--color-succes);
+    visibility: visible;
+}
+.form-control.error span.bi-exclamation-circle-fill{
+    color: var(--color-error);
+    visibility: visible;
+}
+.form-control.error small{
+    color: var(--color-error);
+    visibility: visible;
+}

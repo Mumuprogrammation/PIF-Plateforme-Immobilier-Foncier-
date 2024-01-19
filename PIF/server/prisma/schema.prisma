@@ -8,20 +8,22 @@ datasource db {
 }
 
 model User {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
   name         String?
-  email        String   @unique
+  email        String    @unique
   phone        String
   password     String?
   favTerrainId String[]
   Offer        Offer[]
+  Comment      Comment[]
 }
 
 model Offer {
   id           String    @id @default(auto()) @map("_id") @db.ObjectId
   content      String
+  booking      Json?
   status       Boolean   @default(true)
-  owner        User      @relation(fields: [userEmail], references: [email],onDelete: Cascade)
+  owner        User      @relation(fields: [userEmail], references: [email], onDelete: Cascade)
   authorGround Ground    @relation(fields: [groundID], references: [id])
   userEmail    String
   groundID     String    @db.ObjectId
@@ -42,32 +44,38 @@ model Ground {
 }
 
 model Location {
-  id            String   @id @default(auto()) @map("_id") @db.ObjectId
-  longitude     Float
-  latitude      Float
-  Ground        Ground[]
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  longitude Float
+  latitude  Float
+  Ground    Ground[]
 }
 
 model Receive {
   id             String  @id @default(auto()) @map("_id") @db.ObjectId
-  authorMessage  Message @relation(fields: [messageID], references: [id])
+  authorMessage  Comment @relation(fields: [commentID], references: [id])
   concernedOffer Offer?  @relation(fields: [offerID], references: [id])
-  messageID      String  @db.ObjectId
+  commentID      String  @db.ObjectId
   offerID        String  @db.ObjectId
 }
 
-model Message {
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  messageContent String
-
+model Comment {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  commentContent String
+  authorComment  User      @relation(fields: [userEmail], references: [email])
+  userEmail       String   
   receive        Receive[]
 }
 
 model Category {
-  id              String @id @default(auto()) @map("_id") @db.ObjectId
-  categoryName    String
-  concernedGround Ground @relation(fields: [groundID], references: [id])
-  groundID        String @db.ObjectId
+  id              String       @id @default(auto()) @map("_id") @db.ObjectId
+  categoryName    CategoryName
+  concernedGround Ground       @relation(fields: [groundID], references: [id])
+  groundID        String       @db.ObjectId
+}
+
+enum CategoryName {
+  Titre
+  Non_Titre
 }

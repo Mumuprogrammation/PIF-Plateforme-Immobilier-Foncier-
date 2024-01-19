@@ -22,3 +22,72 @@ export const createUser = asyncHandler(async (req,res) =>{
         }
 
 });
+
+export const findAllUsers = asyncHandler(async(req, res) =>{
+    console.log("Finding  users");
+    try{
+        const userExists = await prisma.user.findMany({
+        });
+        res.send(userExists)
+    }
+      catch(err){
+        res.status(404).send({message: "Users not found!"})
+      } 
+       
+})
+
+export const findUser = asyncHandler(async(req, res) => {
+    console.log("Finding a user");
+  
+    let { name } = req.body;
+    try {
+      const user = await prisma.user.findFirst({
+        where: { name: name },
+      });
+  
+      if (!user) {
+        res.status(404).send({ message: "User not found!" });
+      } else {
+        res.send(user);
+      }
+    } catch (err) {
+      res.status(500).send({ message: "Internal server error!" });
+    }
+  });
+
+export const deleteUser = asyncHandler(async(req, res)=>{
+    console.log("deleting user");
+
+    let{ id } = req.params;
+    try{
+        const userDelete =  await prisma.user.delete({
+            where: {
+              id
+            },
+          })
+          res.send("user delete with success")
+    }catch(err){
+        res.status(400).send({message: "Error while deleting the user"})
+    }
+   
+   
+})
+
+export const updateUser = asyncHandler (async(req, res)=>{
+    console.log("updating user");
+
+    let{ email } = req.params;
+
+    try{
+        const userUpdate = await prisma.user.update({
+            where: {
+                email: email
+              },
+              data: req.body
+        })
+        res.send(userUpdate) 
+    }catch(err){
+        res.status(400).send({message: "Error while updating the user"})
+    }
+   
+})

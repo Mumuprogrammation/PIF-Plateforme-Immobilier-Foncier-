@@ -1,41 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortup icon" href="../../images/logoPIF.png">
     <link rel="stylesheet" href="css/preload.css">
+    <link rel="stylesheet" href="css/publication.css">
     <link rel="stylesheet" href="icons/font/bootstrap-icons.css">
-    <link rel="preload" as="image" href="images/agent2.jpg">
-    <link rel="preload" as="image" href="images/agent2.jpg">
-    <link rel="preload" as="image" href="images/agent2.jpg">
     <title>Publier votre annonce</title>
 </head>
+
 <body>
     <div class="preload" data-preload>
         <div class="circle"></div>
         <p class="text">P.I.F</p>
     </div>
 
+    <!-- <div class="title">
+        <p class="headline-2 text-center section-subtitle has-before" id="about-label">Que Fesons Nous?</p>
+    </div> -->
+
+    <div class="container">
+        <h1>INFORMATIONS TERRAIN</h1>
+        <p>Faites entrer les informations du terrain que vous souhaiter publier</p>
+        <form action="">
+            <div class="row">
+                <div class="column">
+                    <label for="tel">Numero de telephone</label>
+                    <input type="text" id="tel" placeholder="Entrer votre telephone">
+                </div>
+                <div class="column">
+                    <label for="tel">Titre de l'annonce</label>
+                    <input type="text" id="tel" placeholder="Entrer un titre a votre annonce">
+                </div>
+
+                <div class="column">
+                    <label for="">Photo du terrain</label>
+                    <label for="fileInput" class="label">
+                        <span class="bi-cloud-arrow-up-fill icon"></span>
+                        <span class="labeler search">Charger un media</span>
+                        <span id="filename"></span>
+                    </label>
+                    <input type="file" id="fileInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column column-local">
+                    <button id="btnLocalisation" class="btn-local">Localisation</button>
+                    <input type="text" id="localisationInput" placeholder="Cliquez sur localisation et entrer la localisation du terrain" class="local">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="tel">Adresse</label>
+                    <input type="text" id="tel" placeholder="Entrer l'adresse de votre terrain">
+                </div>
+                <div class="column">
+                    <label for="tel">Superficie</label>
+                    <input type="text" id="tel" placeholder="Entrer la superficie de votre terrain">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="issue">Description</label>
+                    <textarea name="" id="" placeholder="Ecrivez une description de votre terrain"></textarea>
+                </div>
+            </div>
+            <button id="btn">Publier</button>
+        </form>
+    </div>
+
+
+    <script>
+        const fileInput = document.querySelector("#fileInput")
+        const fileNameElement = document.querySelector("#filename")
+        const Icon = document.querySelector('.icon')
+
+        fileInput.addEventListener('change', function () {
+            const files = fileInput.files;
+            if (files.length > 0) {
+                const fileName = files[0].name;
+                fileNameElement.innerHTML = 'Nom du fichier : ' + fileName;
+                Icon.classList.replace('bi-cloud-arrow-up-fill', 'bi-cloud-check-fill')
+            } else {
+                fileNameElement.innerHTML = 'Aucun fichier selectionne';
+            }
+        })
+
+        document.getElementById('btnLocalisation').addEventListener('click', function () {
+            openGoogleMaps();
+        });
+
+        function openGoogleMaps() {
+            const latitude = 37.7749;
+            const longitude = -122.4194;
+            const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+
+            // Ouvrir Google Maps dans une nouvelle fenêtre ou un nouvel onglet
+            window.open(url);
+
+            // Afficher la localisation dans le champ de saisie
+            //document.getElementById('localisationInput').setAttribute('value', `${latitude}, ${longitude}`);
+        }
+
+      fetch('http://localhost:8000/api/offer/findAll').then((response)=>{
+         return response.json();
+        
+     }).then((json) => {
+        console.log(json)
+      });
+            
+        
+
+    </script>
+
+    <!-- <script> 
+        window.onmessage = function (event) {
+            if (event.origin === 'https://www.google.com' && event.data && event.data.startsWith('https://www.google.com/maps/place/')) {
+                var coordinates = event.data.split('/').pop().split(',');
+                var latitude = coordinates[0];
+                var longitude = coordinates[1];
+
+                Afficher les coordonnées dans le champ de saisie
+                document.getElementById('localisationInput').value = latitude + ', ' + longitude;
+            }
+        };
+    </script> -->
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <script src="js/preload.js"></script>
 </body>
+
 </html>

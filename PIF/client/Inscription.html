@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Inscription.css">
+    <link rel="stylesheet" href="icons/font/bootstrap-icons.css">
+    <title>Inscription</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Creer votre compte</h2>
+        </div>
+        <form class="form" id="form">
+            <div class="form-control ">
+                <label for="">Nom d'utilisateur</label>
+                <input type="text" id="username" placeholder="Entrer votre nom">
+                <span class="bi-check-circle-fill"></span>
+                <span class="bi-exclamation-circle-fill"></span>
+                <small>Message d'erreur</small>
+            </div>
+            <div class="form-control ">
+                <label for="">Email</label>
+                <input type="text" id="email" placeholder="Entrer votre email">
+                <span class="bi-check-circle-fill"></span>
+                <span class="bi-exclamation-circle-fill"></span>
+                <small>Message d'erreur</small>
+            </div>
+            <div class="form-control ">
+                <label for="">Phone</label>
+                <input type="tel" id="phone" placeholder="Entrer votre telephone">
+                <span class="bi-check-circle-fill"></span>
+                <span class="bi-exclamation-circle-fill"></span>
+                <small>Message d'erreur</small>
+            </div>
+            <div class="form-control">
+                <label for="">Mot de passe</label>
+                <input type="password" id="password" placeholder="Entrer votre mot de passe">
+                <span class="bi-check-circle-fill"></span>
+                <span class="bi-exclamation-circle-fill"></span>
+                <small>Message d'erreur</small>
+            </div>
+            <div class="form-control">
+                <label for="">Confirmation mot de passe</label>
+                <input type="password" id="passwordConfirm" placeholder="Confirmer votre mot de passe">
+                <span class="bi-check-circle-fill"></span>
+                <span class="bi-exclamation-circle-fill"></span>
+                <small>Message d'erreur</small>
+            </div>
+            <button type="submit" id='btn-solid'><span class="bi-person-plus-fill"></span>Enregistrer</button>
+        </form>
+    </div>
+    <script>
+        const btn = document.getElementById('btn-solid');
+        btn.addEventListener('click', async (event)=>{
+            event.preventDefault();
+            
+                    const userName = document.getElementById('username').value;
+                    const emailUser = document.getElementById('email').value;
+                    const phoneUser = document.getElementById('phone').value;
+                    const passwordUser = document.getElementById('password').value;
+                    const ConfirmPasswordUser = document.getElementById('passwordConfirm').value;
+            
+            console.log(userName)        
+            console.log(emailUser)
+            console.log(phoneUser)
+            console.log(passwordUser)
+            console.log(ConfirmPasswordUser)
+
+            
+  try {
+    const response = await fetch('http://localhost:8000/api/user/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: userName,
+        email: emailUser,
+        phone: phoneUser,
+        password: passwordUser
+      })
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+    } else {
+      console.log('An error occurred during the request:', response.status);
+    }
+  } catch (error) {
+    console.log('An error occurred:', error);
+  }
+});
+      
+          
+    </script>
+    <script src="js/Inscription.js"></script>
+</body>
+</html>
