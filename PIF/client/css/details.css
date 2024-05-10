@@ -200,6 +200,22 @@ body.nav-active{
 }
 
 
+.btn{
+    position: relative;
+    color: var(--black);
+    font-size: var(--fontSize-label-2);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    max-width: max-content;
+    letter-spacing: var(--letterSpacing-5);
+    border: 1px solid var(--black);
+    border-radius: var(--radius-24);
+    padding: 12px 45px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
 /* ABOUT */
 .about{
     margin-top: 200px;
@@ -429,7 +445,7 @@ body.nav-active{
 
 .headline-1{
     font-size: var(--fontSize-headline-2);
-    color: var(--white);
+    color: var(--black);
 }
 .headline-2{
     font-size: var(--fontSize-headline-2);
@@ -469,7 +485,7 @@ body.nav-active{
 
 
 
-
+/* 
 .btn{
     position: relative;
     color: var(--white);
@@ -483,7 +499,7 @@ body.nav-active{
     padding: 12px 45px;
     overflow: hidden;
     z-index: 1;
-}
+} */
 
 .btn2{
     width: 100%;
